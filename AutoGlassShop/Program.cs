@@ -18,7 +18,7 @@ class Program
             if(answer == true) {
                 Console.WriteLine("What is the competitor's price?");
                 competitorPrice = double.Parse(Console.ReadLine());
-                Console.WriteLine("The glass price is: $" + GetCompetitorPrice.Get(competitorPrice));
+                Console.WriteLine("The glass price is: $" + GetCompetitorPrice.getGlassPrice(competitorPrice));
             }
             else
             {

@@ -4,17 +4,7 @@ namespace AutoGlassShop;
 
 public class GetCompetitorPrice
 {
-    public static double Get(double competitorPrice)
-    {
-        double glassPrice;
-        
-        glassPrice = getGlassPrice(competitorPrice);
-        
-        return glassPrice;
-        
-    }
-
-    static double getGlassPrice(double competitorPrice)
+    public static double getGlassPrice(double competitorPrice)
     {
         double price;
         double tax;
