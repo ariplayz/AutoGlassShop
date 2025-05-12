@@ -29,8 +29,8 @@ class Program
                 
                 glassPrice = double.Parse(Console.ReadLine());
                 
-                tax = glassPrice * 0.086;
-                totalPrice = glassPrice + 55 + tax;
+                tax = Math.Round(glassPrice * 0.086, 2);
+                totalPrice = Math.Round(glassPrice + 55 + tax, 2);
                 
                 Console.WriteLine("The glass price is: $" + totalPrice);
             }
@@ -45,15 +45,15 @@ class Program
             Console.ReadLine();
         }
     }
+    
     static double getGlassPrice(double competitorPrice)
     {
         double price;
         double tax;
         
-        tax = competitorPrice * 0.086;
-
+        tax = Math.Round(competitorPrice * 0.086, 2);
         price = competitorPrice - 55 - tax;
 
-        return price;
+        return Math.Round(price, 2);
     }
 }
