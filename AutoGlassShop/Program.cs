@@ -11,16 +11,15 @@ class Program
         while (continueCalculating)
         {
             double competitorPrice;
-            bool answer;
-            Console.WriteLine("Do you need the glass price? (true or false)");
-            answer = bool.Parse(Console.ReadLine());
+            Console.WriteLine("Do you need the glass price? (Y/N)");
+            string input = Console.ReadLine()?.ToUpper() ?? "N";
             
-            if(answer == true) {
+            if(input == "Y") {
                 Console.WriteLine("What is the competitor's price?");
                 competitorPrice = double.Parse(Console.ReadLine());
-                Console.WriteLine("The glass price is: $" + GetCompetitorPrice.getGlassPrice(competitorPrice));
+                Console.WriteLine("The glass price is: $" + getGlassPrice(competitorPrice));
             }
-            else
+            else if(input == "N")
             {
                 double totalPrice;
                 double glassPrice;
@@ -35,17 +34,18 @@ class Program
                 
                 Console.WriteLine("The glass price is: $" + totalPrice);
             }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter Y or N.");
+                continue;
+            }
 
-            Thread.Sleep(2000); // Wait for 2 seconds
+            Thread.Sleep(2000);
             Console.WriteLine("Press Enter to calculate another price");
             Console.ReadLine();
         }
     }
-}
-
-public class GetCompetitorPrice
-{
-    public static double getGlassPrice(double competitorPrice)
+    static double getGlassPrice(double competitorPrice)
     {
         double price;
         double tax;
