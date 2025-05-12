@@ -32,7 +32,7 @@ class Program
                 tax = Math.Round(glassPrice * 0.086, 2);
                 totalPrice = Math.Round(glassPrice + 55 + tax, 2);
                 
-                Console.WriteLine("The glass price is: $" + totalPrice);
+                Console.WriteLine("The glass total is: $" + totalPrice);
             }
             else
             {
@@ -43,16 +43,16 @@ class Program
             Thread.Sleep(2000);
             Console.WriteLine("Press Enter to calculate another price");
             Console.ReadLine();
+            Console.Clear();
         }
     }
     
     static double getGlassPrice(double competitorPrice)
     {
         double price;
-        double tax;
+ 
         
-        tax = Math.Round(competitorPrice * 0.086, 2);
-        price = competitorPrice - 55 - tax;
+        price = (competitorPrice - 55) / 1.086;
 
         return Math.Round(price, 2);
     }
